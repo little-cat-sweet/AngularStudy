@@ -1,0 +1,75 @@
+<p>I am {{name}}</p>
+=============================
+<p [class] = "box">Test class bind</p>
+<p [id] = "box1">Test Id bind</p>
+<hr>
+<h3 [ngClass]="{'a' : isActive}">ngClass bind style</h3>
+<hr>
+<p [style]="'background : red'">Style test</p>
+
+<hr>
+<p [ngStyle]="{'color' : 'red'}">style test by ngStyle</p>
+===============================
+<hr>
+<p>Test if</p>
+<div *ngIf="isMax"> isMax === true</div>
+<ng-template [ngIf]="isMax">
+  <div>
+    isMax === true;
+  </div>
+</ng-template>
+
+<ng-container *ngIf="isMax; else elseTemplate" ]>
+  <div>isMax = true</div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div>isMax = false</div>
+</ng-template>
+
+==========================
+<p>循环语句</p>
+<div *ngFor="let color of colors let location = index let isOdd = odd">
+  color is {{color}}
+  <br>
+  index is {{location}}
+  <br>
+  {{isOdd}}
+  <br>
+  ----------------
+</div>
+<!--解析后-->
+<ng-template ngFor let-color [ngForOf]="colors" let-i='index' let-odd="odd" ]>
+  <div>
+    {{color}}
+    {{i}}
+    {{odd}} <br>
+  </div>
+</ng-template>
+===========================
+<div [ngSwitch]="type">
+  <p *ngSwitchCase="1">
+    type 1
+  </p>
+  <p *ngSwitchCase="2">
+    type 2
+  </p>
+  <p *ngSwitchDefault>
+    type 3
+  </p>
+</div>
+=========================<br>
+事件绑定<br>
+<input type="text" (input)="inputChange($event)">
+<button (click)="alertContent($event)">click</button>
+<br>
+=========================<br>
+双向绑定<br>
+<input type="text" [(ngModel)]="title">
+<p>title : {{title}}</p>
+
+<hr>
+age : <input type="text" [formControl]="age">
+<br>
+<p>age : {{age.value}}</p>
+<br>
+<button (click)="ageChange()">grow up</button>
