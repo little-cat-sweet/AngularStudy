@@ -58,7 +58,7 @@
   </p>
 </div>
 =========================<br>
-事件绑定<br>
+事件绑定<br>3322
 <input type="text" (input)="inputChange($event)">
 <button (click)="alertContent($event)">click</button>
 <br>
@@ -73,3 +73,17 @@ age : <input type="text" [formControl]="age">
 <p>age : {{age.value}}</p>
 <br>
 <button (click)="ageChange()">grow up</button>
+<br>
+动态表单空间
+<form [formGroup]="loginInput">
+  <label>
+    your account :<br>
+    <input type="text" formControlName="name">
+  </label>
+  <br>
+  <label>
+    your password :<br>
+    <input type="text" formControlName="password">
+  </label><br>
+  <button (click)="submit()" >submit</button>
+</form>

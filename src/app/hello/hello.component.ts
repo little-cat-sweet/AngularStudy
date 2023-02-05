@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormsModule} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-hello',
@@ -23,7 +23,15 @@ export class HelloComponent implements OnInit {
   constructor() {
 
   }
+  loginInput : FormGroup = new FormGroup({
+    name : new FormControl(""),
+    password : new FormControl("")
+  })
 
+  submit() : void{
+    console.log("your account is " + this.loginInput.value.name)
+    console.log("your password is " + this.loginInput.value.password)
+  }
   ngOnInit(): void {
 
   }
