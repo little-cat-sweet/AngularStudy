@@ -40,6 +40,9 @@ export class HelloComponent implements OnInit {
     password : new FormControl("")
   })
 
+  dateStr : Date = new Date();
+
+  pipeTest : String = "pipe test"
   submit() : void{
     console.log("your account is " + this.loginInput.value.name)
     console.log("your password is " + this.loginInput.value.password)

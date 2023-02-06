@@ -5,11 +5,13 @@ import { ReactiveFormsModule} from "@angular/forms";
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import {FormsModule} from "@angular/forms";
+import { TestPipe } from './pipe/test.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent
+    HelloComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule,
