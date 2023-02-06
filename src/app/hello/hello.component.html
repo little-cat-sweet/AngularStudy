@@ -87,3 +87,19 @@ age : <input type="text" [formControl]="age">
   </label><br>
   <button (click)="submit()" >submit</button>
 </form>
+<br>
+<p>自定义表验证</p>
+<form [formGroup]="formDataTest">
+  <label>
+    account : <input type="text" formControlName="userName">
+  </label>
+  <p *ngIf="formDataTest.get('userName')?.errors?.['required']">请输入账号</p>
+  <label>
+    password : <input type="text" formControlName="password">
+  </label><br>
+  <label>
+    phone : <input type="text" formControlName="phone">
+  </label><br>
+  <button (click)="submitTest()">submit</button>
+</form>
+

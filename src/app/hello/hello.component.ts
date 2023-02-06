@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validator, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-hello',
@@ -20,9 +20,21 @@ export class HelloComponent implements OnInit {
 
   age : FormControl = new FormControl();
   changeContent : String = "";
-  constructor() {
+
+
+  constructor(private Builder : FormBuilder) {
 
   }
+
+  // 自定义动态表单验证data
+  formDataTest = this.Builder.group({
+    userName : ['',[Validators.required,
+                    Validators.maxLength(18),
+                    Validators.minLength(6)]],
+    password : ['', this.passwordFilter],
+    phone : ['', [Validators.required, this.phoneFilter]]
+  })
+
   loginInput : FormGroup = new FormGroup({
     name : new FormControl(""),
     password : new FormControl("")
@@ -46,5 +58,25 @@ export class HelloComponent implements OnInit {
 
   ageChange(){
     this.age.setValue(18);
+  }
+
+
+
+  passwordFilter(password : FormControl) : object {
+    let value = password.value || ""
+    if (! value) return {'msg': "please input your password"}
+    if (value.length < 5 || value.length > 18) return {'error': "your password is not correct"}
+    return {}
+  }
+
+  phoneFilter(phone : FormControl) : object{
+
+    let value= phone.value || "";
+    if(value.length != 11) return {'msg' : "your phone type is not correct"}
+    return {}
+  }
+
+  submitTest(){
+    console.log(this.formDataTest)
   }
 }
