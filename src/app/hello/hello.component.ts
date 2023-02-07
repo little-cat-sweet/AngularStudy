@@ -43,6 +43,8 @@ export class HelloComponent implements OnInit {
   dateStr : Date = new Date();
 
   pipeTest : String = "pipe test"
+
+  giveToTitle : String = "hello title, I am hello"
   submit() : void{
     console.log("your account is " + this.loginInput.value.name)
     console.log("your password is " + this.loginInput.value.password)
@@ -81,5 +83,9 @@ export class HelloComponent implements OnInit {
 
   submitTest(){
     console.log(this.formDataTest)
+  }
+
+  titleChange(){
+    this.giveToTitle = "changed the title"
   }
 }

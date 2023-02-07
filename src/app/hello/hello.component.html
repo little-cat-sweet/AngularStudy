@@ -108,3 +108,7 @@ age : <input type="text" [formControl]="age">
 管道：<br>
 {{dateStr | date : 'yyyy-MM-dd HH : mm :ss'}}<br>
 {{pipeTest | test}}
+<br>
+======================================<br>
+<button (click)="titleChange()">change title</button>
+<app-title [test1] = "giveToTitle"></app-title>

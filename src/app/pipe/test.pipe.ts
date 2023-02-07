@@ -8,5 +8,4 @@ export class TestPipe implements PipeTransform {
   transform(value: unknown, ...args: unknown[]): unknown {
     return "管道测试>>" + value + "<<管道测试"
   }
-
 }
