@@ -110,6 +110,17 @@ age : <input type="text" [formControl]="age">
 {{pipeTest | test}}
 <br>
 ======================================<br>
+组件间通信： <br>
+<p>父到子</p>
 <button (click)="titleChange()">change title</button>
+==========================================
+<p>子到父</p>
 <p *ngFor="let item of list">{{item}}</p>
-<app-title [test1] = "giveToTitle" (addItem) = "addItemForList($event)"></app-title>
+<app-title #titleComponent [test1] = "giveToTitle" (addItem) = "addItemForList($event)"></app-title>
+<p>viewChild</p>
+<button (click)="addItemForList1()">测试通过viewChild调用titleComponent的增加vue的函数</button><br>
+=======================================<br>
+
+
+
+

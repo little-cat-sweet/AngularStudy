@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validator, Validators} from "@angular/forms";
 
 @Component({
@@ -47,6 +47,12 @@ export class HelloComponent implements OnInit {
   giveToTitle : String = "hello title, I am hello"
 
   list : Array<string> = ["Jack", "Mary", "Bob"];
+
+  @ViewChild('titleComponent')
+  child : any;
+  addItemForList1(){
+    this.child.addItemForHello();
+  }
 
   addItemForList(str : string){
     this.list?.push(str);
