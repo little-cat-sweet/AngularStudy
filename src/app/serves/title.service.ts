@@ -7,4 +7,10 @@ import { Injectable } from '@angular/core';
 export class TitleService {
 
   constructor() { }
+
+  list : Array<String> = ["hello"];
+
+  getList() : any{
+    return this.list;
+  }
 }

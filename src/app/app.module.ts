@@ -9,6 +9,8 @@ import { TestPipe } from './pipe/test.pipe';
 import { HomeComponent } from './home/home.component';
 import { TitleComponent } from './title/title.component';
 
+import {TitleService} from './serves/title.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,7 @@ import { TitleComponent } from './title/title.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [TitleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

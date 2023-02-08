@@ -1,5 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
+import {TitleService} from "../serves/title.service";
+
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
@@ -7,7 +9,8 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class TitleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService : TitleService) { }
+  list : Array<String> = [];
 
   @Input()
   test1?: String;
@@ -21,6 +24,8 @@ export class TitleComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("title component has been created")
+    this.list = this.titleService.getList();
+    console.log(this.list)
   }
 
   ngOnChanges() : void {
