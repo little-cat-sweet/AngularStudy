@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -11,6 +11,14 @@ export class TitleComponent implements OnInit {
 
   @Input()
   test1?: String;
+
+  @Output()
+  addItem = new EventEmitter();
+
+  addItemForHello(){
+    this.addItem?.emit("vue");
+  }
+
   ngOnInit(): void {
     console.log("title component has been created")
   }

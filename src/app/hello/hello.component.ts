@@ -45,6 +45,13 @@ export class HelloComponent implements OnInit {
   pipeTest : String = "pipe test"
 
   giveToTitle : String = "hello title, I am hello"
+
+  list : Array<string> = ["Jack", "Mary", "Bob"];
+
+  addItemForList(str : string){
+    this.list?.push(str);
+  }
+
   submit() : void{
     console.log("your account is " + this.loginInput.value.name)
     console.log("your password is " + this.loginInput.value.password)

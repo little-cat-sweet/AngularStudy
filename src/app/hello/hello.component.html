@@ -111,4 +111,5 @@ age : <input type="text" [formControl]="age">
 <br>
 ======================================<br>
 <button (click)="titleChange()">change title</button>
-<app-title [test1] = "giveToTitle"></app-title>
+<p *ngFor="let item of list">{{item}}</p>
+<app-title [test1] = "giveToTitle" (addItem) = "addItemForList($event)"></app-title>
