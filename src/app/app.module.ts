@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule} from "@angular/forms";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
-import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
-import {FormsModule} from "@angular/forms";
-import { TestPipe } from './pipe/test.pipe';
-import { HomeComponent } from './home/home.component';
-import { TitleComponent } from './title/title.component';
+import {AppComponent} from './app.component';
+import {HelloComponent} from './hello/hello.component';
+import {TestPipe} from './pipe/test.pipe';
+import {HomeComponent} from './home/home.component';
+import {TitleComponent} from './title/title.component';
 
-import {TitleService} from './serves/title.service'
+import {TitleService} from './serves/title.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ import {TitleService} from './serves/title.service'
     HelloComponent,
     TestPipe,
     HomeComponent,
-    TitleComponent
+    TitleComponent,
   ],
   imports: [
     BrowserModule,
